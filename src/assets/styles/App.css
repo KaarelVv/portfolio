@@ -1,6 +1,6 @@
-div {
+/* div {
   outline: 4px solid red;
-} 
+}  */
 .layout {
   position: relative;
   overflow: hidden;
@@ -19,4 +19,43 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.responsive-content {
+  position: relative;
+  z-index: 0;
+  max-width: 1200px; /* Prevents content from getting too wide on large screens */
+  width: 90%; /* Ensures it scales down for smaller screens */
+  margin: 0 auto; /* Centers the content */
+  padding: 20px;
+}
+.section {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* Responsive scaling */
+@media (max-width: 1024px) {
+  .responsive-content {
+    max-width: 900px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-content {
+    max-width: 700px;
+    width: 95%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 5px;
+  }
 }

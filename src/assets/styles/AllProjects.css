@@ -1,0 +1,81 @@
+#projects {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: left;
+  }
+  
+  /* Sidebar containing both title and list */
+  .project-sidebar {
+    position: absolute;
+    top: 50%;
+    left: 5%; /* Moves it to the left */
+    transform: translateY(-50%);
+    text-align: left;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  /* Moves the entire sidebar off-screen when hidden */
+  .project-sidebar.hidden {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  
+  .project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 250px;
+  }
+  
+  .project-list li {
+    cursor: pointer;
+    font-size: 18px;
+    color: #007BFF;
+    padding: 8px 0;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .project-list li:hover {
+    color: #0056b3;
+  }
+  
+  .iframe-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: 70vh;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .iframe-container.visible {
+    opacity: 1;
+  }
+  
+  .iframe-container.hidden {
+    opacity: 0;
+  }
+  
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  
