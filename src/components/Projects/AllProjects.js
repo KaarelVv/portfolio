@@ -36,7 +36,6 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
             ))}
           </ul>
         </div>
-
         {/* Preloaded iframe - hidden until selected */}
         <div className={`iframe-container ${isProjectSelected ? 'visible' : 'hidden'}`}>
           {selectedProject && (
@@ -45,14 +44,10 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
               title="Project Showcase"
               loading='lazy'
               onLoad={() => setIsIframeLoaded(true)}
-              style={{
-                opacity: isIframeLoaded ? 1 : 0, // Fades in when fully loaded
-                transition: 'opacity 0.5s ease-in-out',
-              }}
+
             ></iframe>
           )}
         </div>
-
         {/* Back Button */}
         {isProjectSelected && (
           <button
@@ -68,7 +63,7 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
               cursor: 'pointer',
             }}
           >
-            Back to Main View
+            Back to list
           </button>
         )}
       </div>

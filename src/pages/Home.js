@@ -1,21 +1,17 @@
 import React from 'react';
-
 import Navbar from '../components/Navbar/Navbar';
-import Intro from '../components/Intro/Intro';
 import AllProjects from '../components/Projects/AllProjects';
 import Contact from '../components/Contact/Contact';
 import PageLayout from '../components/Shapes/PageLayout';
-import ProjectDetail from '../components/Projects/ProjectDetail';
+import About from '../components/Intro/About';
 
 const Home = () => {
     return (
-
         <>
             <Navbar />
             <PageLayout>
-                <Intro />
+                <About />
                 <AllProjects />
-                <ProjectDetail></ProjectDetail>
                 <Contact />
             </PageLayout></>
     );

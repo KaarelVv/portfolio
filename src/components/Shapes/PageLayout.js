@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PolygonBackground from './PolygonBackground';
+import '../../assets/styles/PageLayout.css'
 
 
 
@@ -16,7 +17,7 @@ const PageLayout = ({ children }) => {
   };
   return (
     <div className="layout">
-      {/* First section main polygon */}
+      {/* First section, About Me */}
       <PolygonBackground
         points="0,0 30,0 100,100 0,100"
         style={{ top: 0, left: 0, width: '60vw', height: '100vh' }}
@@ -24,50 +25,45 @@ const PageLayout = ({ children }) => {
       />
       {/* Second section right polygon */}
       <PolygonBackground
-        points="0,0 100,0 100,100 0,100 70,50"
+        points="0,0 100,0 100,100 0,100 60,50"
         style={{
           top: '100vh',
           right: isProjectSelected ? '-10vw' : 0,
-          width: '30vw',
+          width: '39vw',
           height: '100vh',
           transition: 'all 0.5s ease-in-out',
         }}
-        fill="#20B2AA"
+        fill="#FFA51F"
       />
-      
+
       {/* Second section left polygon */}
       <PolygonBackground
-        points="100,0 0,0 0,100 100,100 30,50"
+        points="40,0 0,0 0,100 40,100 100,50"
         style={{
           top: '100vh',
           left: isProjectSelected ? '-10vw' : 0,
-          width: '30vw',
+          width: '38vw',
           height: '100vh',
           transition: 'all 0.5s ease-in-out',
         }}
-        fill="#20B2AA"
+        fill="#FFA51F"
       />
-      {/* Third section, maybe delete */}
+      {/* Third section, Contact*/}
       <PolygonBackground
-        points="0,0 100,0 100,100,100"
-        style={{ top: '200vh', right: 0, width: '30vw', height: '100vh' }}
-        fill="#FF6347"
+        points="0,100 0,0 100,0"
+        style={{ top: '200vh', left: 0, width: '60vw', height: '100vh' }}
+        fill="#FFA51F"
       />
-      {/* Forth section main polygon */}
-      <PolygonBackground
-        points="0,100 0,0 100,50"
-        style={{ top: '300vh', left: -10, width: '100vw', height: '100vh' }}
-        fill="#6A5ACD"
-      />
-        {/* Sections rendered inside */}
-        {React.Children.map(children, child =>
+
+      {/* Sections rendered inside */}
+      {React.Children.map(children, child =>
         React.cloneElement(child, {
           onProjectClick: handleProjectClick,
           onBackClick: handleBackClick,
           isProjectSelected,
         })
       )}
-      
+
     </div>
   );
 };

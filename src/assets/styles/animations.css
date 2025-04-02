@@ -1,0 +1,39 @@
+/* animations.css */
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .fade-delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .fade-delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  .fade-delay-3 {
+    animation-delay: 0.6s;
+  }
+  
+  .fade-delay-4 {
+    animation-delay: 0.8s;
+  }
+  
+  .fade-delay-5 {
+    animation-delay: 1s;
+  }
+  

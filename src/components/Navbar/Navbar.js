@@ -7,7 +7,6 @@ const Navbar = () => {
       <div className="nav-buttons">
         <a href="#intro">Intro</a>
         <a href="#projects">Projects</a>
-        <a href="#detail">ProjectDetail</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
