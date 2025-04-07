@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import '../../assets/styles/AllProjects.css';
+import '../../assets/styles/components/projects.css';
+import { projects } from '../../data/Projects'; // Import the projects JSON
 
 const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
-  const projects = [
-    { name: 'Project A', link: 'https://vso24viilvere.ita.voco.ee/webShop/' },
-    { name: 'Project B', link: 'https://vso24viilvere.ita.voco.ee/webShop/' },
-    { name: 'Project C', link: 'https://vso24viilvere.ita.voco.ee/webShop/' },
-  ];
-
   const [selectedProject, setSelectedProject] = useState(null);
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
   useEffect(() => {
     if (selectedProject) {
-      setIsIframeLoaded(false);
+      setIsIframeLoaded(false); // Reset iframe loaded state when a new project is selected
     }
   }, [selectedProject]);
 
-  const handleProjectClick = (projectLink) => {
-    setSelectedProject(projectLink);
-    onProjectClick();
+  const handleProjectClick = (projectUrl) => {
+    setSelectedProject(projectUrl); // Set the selected project URL
+    onProjectClick(); // Trigger the parent callback
+
+  };
+  const handleBackClick = () => {
+    setSelectedProject(null); // Reset the selected project
+    onBackClick(); // Trigger the parent callback
   };
 
   return (
@@ -29,43 +29,34 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
         <div className={`project-sidebar ${isProjectSelected ? 'hidden' : ''}`}>
           <h2 className="project-title">All Projects</h2>
           <ul className="project-list">
-            {projects.map((project, index) => (
-              <li key={index} onClick={() => handleProjectClick(project.link)}>
-                {project.name}
+            {projects.map((project) => (
+              <li key={project.id} onClick={() => handleProjectClick(project.url)}>
+                {project.title}
               </li>
             ))}
           </ul>
         </div>
-        {/* Preloaded iframe - hidden until selected */}
+        {/*  */}
         <div className={`iframe-container ${isProjectSelected ? 'visible' : 'hidden'}`}>
           {selectedProject && (
             <iframe
               src={selectedProject}
               title="Project Showcase"
-              loading='lazy'
-              onLoad={() => setIsIframeLoaded(true)}
-
+              loading="lazy"
+              onLoad={() => setIsIframeLoaded(true)} // Set iframe loaded state
             ></iframe>
+          )}
+          {isProjectSelected && (
+            <button
+              onClick={handleBackClick} // Use the updated handler
+              className="back-button"
+            >
+              Back to list
+            </button>
           )}
         </div>
         {/* Back Button */}
-        {isProjectSelected && (
-          <button
-            onClick={onBackClick}
-            style={{
-              marginTop: '20px',
-              padding: '10px 15px',
-              fontSize: '14px',
-              background: '#333',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            Back to list
-          </button>
-        )}
+
       </div>
     </div>
   );

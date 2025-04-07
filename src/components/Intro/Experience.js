@@ -1,31 +1,61 @@
 import React from 'react';
-import '../../assets/styles/Experience.css';
-import '../../assets/styles/animations.css';
+import '../../assets/styles/components/experience.css';
 
-const Experience = () => {
+const skills = [
+  'JavaScript & React',
+  'Java & Spring',
+  'Object-Oriented Programming',
+  'Data Analysis & Workflow Planning',
+  'Problem Solving & Project Planning',
+];
+
+const education = [
+  'Diploma (Expected 02/2027) - Junior Software Developer, Tartu Vocational College',
+  'Java From Scratch Certificate (2023) - Software Development Academy',
+  'Spring & Hibernate Certificate (2022) - Aurora Development',
+  'IT Project Management Certificate (2018) - BCS',
+];
+
+const experience = [
+  'Project Manager - DIN HUSMONTÖÖR EESTI OÜ, Sweden (2020–2022)',
+  'Production Engineer - SIGNAGE GARDEN OÜ, Tallinn (2016–2020)',
+  'Roof Installer & Object Manager - LIIVIMAA KATUSEMEISTER OÜ, Tartu (2010–2015)',
+];
+
+const Experience = ({ fadeOut, onAnimationEnd }) => {
   return (
-    <div className="intro-text">
-      <h2 className="fade-in-up fade-delay-1">Skills & Knowledge</h2>
-      <ul className="skills-list">
-        <li className="fade-in-up fade-delay-2">JavaScript & React</li>
-        <li className="fade-in-up fade-delay-3">Java & Spring</li>
-        <li className="fade-in-up fade-delay-4">Object-Oriented Programming</li>
-        <li className="fade-in-up fade-delay-5">Data Analysis & Workflow Planning</li>
-        <li className="fade-in-up fade-delay-5">Problem Solving & Project Planning</li>
-      </ul>
-      <h2 className="fade-in-up fade-delay-1">Education</h2>
-      <ul>
-        <li className="fade-in-up fade-delay-2">Diploma (Expected 02/2027) - Junior Software Developer, Tartu Vocational College</li>
-        <li className="fade-in-up fade-delay-3">Java From Scratch Certificate (2023) - Software Development Academy</li>
-        <li className="fade-in-up fade-delay-4">Spring & Hibernate Certificate (2022) - Aurora Development</li>
-        <li className="fade-in-up fade-delay-5">IT Project Management Certificate (2018) - BCS</li>
-      </ul>
-      <h2 className="fade-in-up fade-delay-1">Experience</h2>
-      <ul>
-        <li className="fade-in-up fade-delay-2">Project Manager - DIN HUSMONTÖÖR EESTI OÜ, Sweden (2020–2022)</li>
-        <li className="fade-in-up fade-delay-3">Production Engineer - SIGNAGE GARDEN OÜ, Tallinn (2016–2020)</li>
-        <li className="fade-in-up fade-delay-4">Roof Installer & Object Manager - LIIVIMAA KATUSEMEISTER OÜ, Tartu (2010–2015)</li>
-      </ul>
+    <div
+      className={`intro-text-container ${fadeOut ? 'fade-out' : 'fade-slide-in'}`}
+      onAnimationEnd={onAnimationEnd}
+    >
+      <div className="experience-columns">
+        <div className="experience-column">
+          <h2 className="fade-in-up fade-delay-1">Skills & Knowledge</h2>
+          <ul className="skills-list">
+            {skills.map((item, i) => (
+              <li key={i} className={`fade-in-up fade-delay-${i + 2}`}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="experience-column">
+          <h2 className="fade-in-up fade-delay-1">Education</h2>
+          <ul>
+            {education.map((item, i) => (
+              <li key={i} className={`fade-in-up fade-delay-${i + 2}`}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="experience-column">
+          <h2 className="fade-in-up fade-delay-1">Experience</h2>
+          <ul>
+            {experience.map((item, i) => (
+              <li key={i} className={`fade-in-up fade-delay-${i + 2}`}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

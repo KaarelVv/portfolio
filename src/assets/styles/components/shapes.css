@@ -1,0 +1,19 @@
+/* Shared layout background container */
+.layout {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Add reusable styles for polygon SVGs if needed */
+  .polygon-shape {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* prevents SVGs from intercepting clicks */
+  }

@@ -1,0 +1,37 @@
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  #contact h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  #contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  #contact li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  #contact a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #contact a:hover {
+    color: #0056b3;
+  }
+  

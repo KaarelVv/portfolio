@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PolygonBackground from './PolygonBackground';
-import '../../assets/styles/PageLayout.css'
+import '../../assets/styles/components/shapes.css';
+
 
 
 

@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+"homepage": "http://vso24viilvere.ita.voco.ee/veebiarendus/portfolio/",
 
 ## Available Scripts
 
