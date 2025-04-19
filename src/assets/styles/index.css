@@ -1,10 +1,10 @@
 @import './base/base.css';
 @import './base/typography.css';
 @import './base/animation.css';
-@import './layout/pageLayout.css';
+@import './layout/PageLayout.css';
 @import './layout/responsive.css';
 @import './components/navbar.css';
-@import './components/intro.css';
+@import './components/about.css';
 @import './components/projects.css';
 @import './components/contact.css';
 @import './components/shapes.css';

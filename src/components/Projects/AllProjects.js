@@ -4,11 +4,11 @@ import { projects } from '../../data/Projects'; // Import the projects JSON
 
 const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isIframeLoaded, setIsIframeLoaded] = useState(false);
+  // Removed unused isIframeLoaded state
 
   useEffect(() => {
     if (selectedProject) {
-      setIsIframeLoaded(false); // Reset iframe loaded state when a new project is selected
+      // Removed unused isIframeLoaded logic
     }
   }, [selectedProject]);
 
@@ -24,7 +24,7 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
 
   return (
     <div id="projects" className="section">
-      <div className="responsive-content">
+     
         {/* Sidebar containing both title and list */}
         <div className={`project-sidebar ${isProjectSelected ? 'hidden' : ''}`}>
           <h2 className="project-title">All Projects</h2>
@@ -43,7 +43,7 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
               src={selectedProject}
               title="Project Showcase"
               loading="lazy"
-              onLoad={() => setIsIframeLoaded(true)} // Set iframe loaded state
+              // Removed unused onLoad logic
             ></iframe>
           )}
           {isProjectSelected && (
@@ -57,7 +57,7 @@ const AllProjects = ({ onProjectClick, onBackClick, isProjectSelected }) => {
         </div>
         {/* Back Button */}
 
-      </div>
+     
     </div>
   );
 };

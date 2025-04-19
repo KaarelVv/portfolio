@@ -23,6 +23,8 @@ const experience = [
 ];
 
 const Experience = ({ fadeOut, onAnimationEnd }) => {
+
+  
   return (
     <div
       className={`intro-text-container ${fadeOut ? 'fade-out' : 'fade-slide-in'}`}
