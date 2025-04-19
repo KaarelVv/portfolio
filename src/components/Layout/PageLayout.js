@@ -10,6 +10,10 @@ const PageLayout = ({ children }) => {
   const [isProjectSelected, setIsProjectSelected] = useState(false);
   const [isExperienceSelected, setIsExperienceSelected] = useState(false);
 
+  const gradients = {
+    about: ['#FFA51F', '#FF6F61'],
+    contact: ['#6A11CB', '#2575FC'],
+  };
   const handleProjectClick = () => {
     setIsProjectSelected(true);
   };
@@ -49,7 +53,7 @@ const PageLayout = ({ children }) => {
     let frameId;
     const duration = 150;
     const fps = 60;
-    const steps = duration / (1200/ fps);
+    const steps = duration / (1200 / fps);
     let step = 0;
     const startPoints = points.map(p => ({ ...p }));
 
@@ -90,7 +94,10 @@ const PageLayout = ({ children }) => {
           height: '100vh',
           zIndex: -1,
         }}
-        fill="#FFA51F"
+        gradientId="aboutPolygon"
+        gradientColors={['#FFA51F', '#111']} // <-- Your custom gradient
+
+        strokeWidth={0.3}
       />
       {/* Second section right polygon */}
       <PolygonBackground
@@ -102,7 +109,9 @@ const PageLayout = ({ children }) => {
           height: '100vh',
           transition: 'all 1s ease-in-out',
         }}
-        fill="#FFA51F"
+        gradientColors={['#222', '#666']}
+       
+        strokeWidth={0.4}
       />
 
       {/* Second section left polygon */}
@@ -115,7 +124,9 @@ const PageLayout = ({ children }) => {
           height: '100vh',
           transition: 'all 1s ease-in-out',
         }}
-        fill="#FFA51F"
+        gradientColors={['#fff', '#fff']}
+        stroke='#000'
+        strokeWidth={0.4}
       />
       {/* Third section, Contact*/}
       <PolygonBackground
