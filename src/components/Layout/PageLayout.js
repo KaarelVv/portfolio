@@ -116,7 +116,7 @@ const PageLayout = ({ children }) => {
 
       {/* Second section left polygon */}
       <PolygonBackground
-        points="40,0 0,0 0,100 40,100 75,50"
+        points="100,0 0,0 0,100 100,100 50,50"
         style={{
           top: '100vh',
           left: isProjectSelected ? '-30vw' : 0,
@@ -130,7 +130,7 @@ const PageLayout = ({ children }) => {
       />
       {/* Third section, Contact*/}
       <PolygonBackground
-        points="0,100 0,0 100,0"
+        points="0,100 30,100 100,0 0,0"
         style={{ top: '200vh', left: 0, width: '60vw', height: '100vh' }}
         fill="#FFA51F"
       />

@@ -30,7 +30,7 @@ const AllProjects = ({ onProjectClick, onBackClick }) => {
   return (
     <div id="projects" className={`section ${mode}`}>
       <div className={`project-sidebar ${mode === 'list' ? 'centered' : 'left'}`}>
-        <h2 className="project-title">All Projects</h2>
+        <h2 className="project-title">Projects</h2>
         {mode === "list" && (
           <p className="project-intro">
             Here are some of my featured projects — click any card to learn more.
@@ -67,7 +67,7 @@ const AllProjects = ({ onProjectClick, onBackClick }) => {
             <h2>{selectedProject.title}</h2>
             <p>{selectedProject.description}</p>
             <div className="project-links">
-              <a href={selectedProject.url} target="_blank" rel="noreferrer">🔗 Live Site</a>
+              <a href={selectedProject.url} target="_blank" rel="noreferrer">🔗 URL</a>
               <a href={selectedProject.git} target="_blank" rel="noreferrer">💻 GitHub</a>
             </div>
             {!isMobile && (
